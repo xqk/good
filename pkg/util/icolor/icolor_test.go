@@ -24,3 +24,8 @@ func TestRed(t *testing.T) {
 	fmt.Println(Red("hello "))
 	fmt.Println(Red("hello ", "world"))
 }
+
+func TestYellow(t *testing.T) {
+	fmt.Println(Yellow("hello "))
+	fmt.Println(Yellow("hello ", "world"))
+}
