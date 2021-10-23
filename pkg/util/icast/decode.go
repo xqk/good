@@ -15,6 +15,13 @@ var (
 	ErrNotPointer = errors.New("数值必须是一个指针")
 )
 
+//
+// Decode
+// @Description: 解码接口成某个结构
+// @param m
+// @param val
+// @return error
+//
 func Decode(m interface{}, val interface{}) error {
 	if err := check(val); err != nil {
 		return err

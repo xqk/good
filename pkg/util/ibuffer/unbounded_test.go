@@ -23,10 +23,14 @@ func init() {
 	}
 }
 
-// TestSingleWriter TestSingleWriter启动一个读取器和写入器的goroutine，确保读取器获得写入器添加到缓冲区的所有值。
+//
+// TestSingleWriter
+// @Description: TestSingleWriter启动一个读取器和写入器的goroutine，确保读取器获得写入器添加到缓冲区的所有值。
+// @param t
+//
 func TestSingleWriter(t *testing.T) {
 	ub := NewUnbounded()
-	var reads []int
+	reads := []int{}
 
 	var wg sync.WaitGroup
 	wg.Add(1)
@@ -56,10 +60,14 @@ func TestSingleWriter(t *testing.T) {
 	}
 }
 
-// TestMultipleWriters TestMultipleWriters启动多个写入器和一个读取器的goroutine，确保读取器获得所有写入器写入的所有数据
+//
+// TestMultipleWriters
+// @Description: TestMultipleWriters启动多个写入器和一个读取器的goroutine，确保读取器获得所有写入器写入的所有数据
+// @param t
+//
 func TestMultipleWriters(t *testing.T) {
 	ub := NewUnbounded()
-	var reads []int
+	reads := []int{}
 
 	var wg sync.WaitGroup
 	wg.Add(1)

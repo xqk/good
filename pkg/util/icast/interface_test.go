@@ -1,6 +1,8 @@
 package icast
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestToBool(t *testing.T) {
 	type args struct {

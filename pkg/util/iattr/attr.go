@@ -2,17 +2,25 @@ package iattr
 
 import "errors"
 
-// Attributes 属性
+//
+// Attributes
+// @Description:
+//
 type Attributes struct {
 	m map[interface{}]interface{}
 }
 
 var (
-	// ErrInvalidKVPairs 无效的key
+	// 无效的key
 	ErrInvalidKVPairs = errors.New("invalid kv pairs")
 )
 
-// New 创建一个属性结构对象
+//
+// New
+// @Description:
+// @param kvs
+// @return *Attributes
+//
 func New(kvs ...interface{}) *Attributes {
 	if len(kvs)%2 != 0 {
 		panic(ErrInvalidKVPairs)
@@ -24,7 +32,13 @@ func New(kvs ...interface{}) *Attributes {
 	return a
 }
 
-// WithValues 附加一组属性值
+//
+// WithValues
+// @Description:
+// @receiver a
+// @param kvs
+// @return *Attributes
+//
 func (a *Attributes) WithValues(kvs ...interface{}) *Attributes {
 	if len(kvs)%2 != 0 {
 		panic(ErrInvalidKVPairs)
@@ -39,7 +53,13 @@ func (a *Attributes) WithValues(kvs ...interface{}) *Attributes {
 	return n
 }
 
-// Value 获取属性的某个值
+//
+// Value
+// @Description:
+// @receiver a
+// @param key
+// @return interface{}
+//
 func (a *Attributes) Value(key interface{}) interface{} {
 	return a.m[key]
 }

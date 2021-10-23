@@ -9,7 +9,7 @@ const (
 	BlueColor
 )
 
-// arrToTransform 数组转变为空格分隔的字符串
+// array transform
 func arrToTransform(arg []interface{}) interface{} {
 	var res interface{}
 

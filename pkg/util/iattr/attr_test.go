@@ -2,6 +2,11 @@ package iattr
 
 import "testing"
 
+//
+// TestNew
+// @Description:
+// @param t
+//
 func TestNew(t *testing.T) {
 	k1 := 1
 	v1 := "first"

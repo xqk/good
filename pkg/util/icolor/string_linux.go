@@ -11,32 +11,67 @@ import (
 
 var _ = RandomColor()
 
-// RandomColor 生成随机颜色
+//
+// RandomColor
+// @Description: 生成随机颜色
+// @return string
+//
 func RandomColor() string {
 	return fmt.Sprintf("#%s", strconv.FormatInt(int64(rand.Intn(16777216)), 16))
 }
 
-// Yellow 黄色
+//
+// Yellow
+// @Description:
+// @param msg
+// @param arg
+// @return string
+//
 func Yellow(msg string, arg ...interface{}) string {
 	return sprint(YellowColor, msg, arg...)
 }
 
-// Red 红色
+//
+// Red
+// @Description:
+// @param msg
+// @param arg
+// @return string
+//
 func Red(msg string, arg ...interface{}) string {
 	return sprint(RedColor, msg, arg...)
 }
 
-// Blue 蓝色
+//
+// Blue
+// @Description:
+// @param msg
+// @param arg
+// @return string
+//
 func Blue(msg string, arg ...interface{}) string {
 	return sprint(BlueColor, msg, arg...)
 }
 
-// Green 绿色
+//
+// Green
+// @Description:
+// @param msg
+// @param arg
+// @return string
+//
 func Green(msg string, arg ...interface{}) string {
 	return sprint(GreenColor, msg, arg...)
 }
 
-// sprint 格式化
+//
+// sprint
+// @Description:
+// @param colorValue
+// @param msg
+// @param arg
+// @return string
+//
 func sprint(colorValue int, msg string, arg ...interface{}) string {
 	if arg != nil {
 		return fmt.Sprintf("\x1b[%dm%s\x1b[0m %+v", colorValue, msg, arrToTransform(arg))

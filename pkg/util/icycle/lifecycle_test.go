@@ -6,6 +6,11 @@ import (
 	"time"
 )
 
+//
+// TestCycleDone
+// @Description:
+// @param t
+//
 func TestCycleDone(t *testing.T) {
 	state := "init"
 	c := NewCycle()
@@ -29,6 +34,11 @@ func TestCycleDone(t *testing.T) {
 	}
 }
 
+//
+// TestCycleClose
+// @Description:
+// @param t
+//
 func TestCycleClose(t *testing.T) {
 	state := "init"
 	c := NewCycle()
@@ -52,6 +62,11 @@ func TestCycleClose(t *testing.T) {
 	}
 }
 
+//
+// TestCycleDoneAndClose
+// @Description:
+// @param t
+//
 func TestCycleDoneAndClose(t *testing.T) {
 	ch := make(chan string, 2)
 	state := "init"
@@ -72,6 +87,11 @@ func TestCycleDoneAndClose(t *testing.T) {
 	}
 }
 
+//
+// TestCycleWithError
+// @Description:
+// @param t
+//
 func TestCycleWithError(t *testing.T) {
 	c := NewCycle()
 	c.Run(func() error {
